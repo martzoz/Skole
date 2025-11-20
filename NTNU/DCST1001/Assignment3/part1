@@ -1,0 +1,11 @@
+mkdir us-population-data
+
+chown $(whoami) us-population-data
+
+cd us-population-data
+
+echo | curl -s https://gist.githubusercontent.com/Miserlou/11500b2345d3fe850c92/raw/e36859a9eef58c231865429ade1c142a2b75f16e/gistfile1.txt | grep -E '[0-9],' | less >> us-population-data-1000-cities.txt
+
+chmod +rw  us-population-data-1000-cities.txt
+
+grep Washington us-population-data-1000-cities.txt
